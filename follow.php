@@ -1,4 +1,10 @@
 <?php
+/**
+ * Gets the User IDs of of the followers of a Twitter user
+ * @author aphoe <http://www.github.com/aphoe>
+ * @date Oct 2015
+ */
+ 
 $user = ''; //Screen name/username of the twitter user in question
 
 require_once 'lib/twitteroauth.php';
@@ -7,6 +13,11 @@ define('CONSUMER_KEY', '');
 define('CONSUMER_SECRET', '');
 define('ACCESS_TOKEN', '');
 define('ACCESS_TOKEN_SECRET', '');
+
+/*
+Do not edit beyond this pointer
+Except you know what exactly you are doing
+*/
 
 $toa = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
 
@@ -21,12 +32,6 @@ $loop_counter = 0; //Total loops in the while block
 //get the number of a users followers
 $user_details = $toa->get('users/show', array('screen_name'=>$user));
 $user_data = json_decode($user_details);
-/*
-echo '<pre>';
-	print_r($user_data);
-	echo '</pre>';
-	exit;
-*/
 
 while($cursor != 0){	
 	//Get followers
@@ -35,12 +40,6 @@ while($cursor != 0){
 
 	//Convert JSON returned to array
 	$data = json_decode($followers);
-	
-	/*
-	echo '<pre>';
-	print_r($data);
-	echo '</pre>';
-	*/
 	
 	//write to file
 	foreach($data->ids as $id){
@@ -82,6 +81,5 @@ echo '<br><strong>' . $dumped
 	. '</strong> followers of <strong>' . $user . '</strong> (' 
 	. $user_data->name . ') have been downloaded and saved to file at ' 
 	. date('jS M, Y - g:i:s A');
-#echo '<br>All the followers of <strong>' . $user . '</strong> have been downloaded and saved to file at ' . date('jS M, Y - g:i:s A');
 
 
