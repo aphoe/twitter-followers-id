@@ -6,11 +6,11 @@ This code implements [Twitter API 1.1](https://dev.twitter.com/docs/api/1.1), as
 I have tried to comment my code as much as I should and I have used user-friendly variable names but sometimes... my brain thinks faster than my hands could type so some things are skipped ;)
 
 ##Instructions
-1. Download or clone the zipped file and extract to your web server.
+1. Download the zipped file (or clone the repo) and extract to your web server.
 2. open `follow.php` and do the following
   1. Add the username of the user whose follower you want to save
   2. Add your **Twitter App** values to lines 12-15
-3. Run the script from your web browser
+3. Run the script from your web browser via localhost or webserver.
 4. The followers will be saved to a file in the `followers` folder. The naming format of the text file is `[username]_followers.txt`
 
 ##PHP Server info
