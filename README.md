@@ -14,7 +14,7 @@ I have tried to comment my code as much as I should and I have used user-friendl
 4. The followers will be saved to a file in the `followers` folder. The naming format of the text file is `[username]_followers.txt`
 
 ##PHP Server info
-Just in case the list of followers is quite much, you might have to change the `max_execution_time` config value in your **PHP Config** file ie php.ini to something meaningful.
+Just in case the list of followers is quite high, you might have to change the `max_execution_time` config value in your **PHP Config** file ie php.ini to something meaningful.
 
 I used a value of `43200` (12 hours) on my test server. Although no script I used during test took that long.
 
