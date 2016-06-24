@@ -16,7 +16,7 @@ define('ACCESS_TOKEN_SECRET', '');
 
 /*
 Do not edit beyond this pointer
-Except you know what exactly you are doing
+Unless you know what exactly you are doing
 */
 
 $toa = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
